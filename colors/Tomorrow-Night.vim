@@ -241,7 +241,9 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	endfun
 
 	" Vim Highlighting
-	call <SID>X("Normal", s:foreground, s:background, "")
+	call <SID>X("Normal", s:foreground, "", "")
+	" To work well with airline theme
+	call <SID>X("NormalNotTransparent", s:foreground, s:background, "")
 	call <SID>X("LineNr", s:selection, "", "")
 	call <SID>X("NonText", s:selection, "", "")
 	call <SID>X("SpecialKey", s:selection, "", "")
@@ -271,7 +273,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	end
 
 	" Standard Highlighting
-	call <SID>X("Comment", s:comment, "", "")
+	call <SID>X("Comment", s:comment, "", "italic")
 	call <SID>X("Todo", s:comment, s:background, "")
 	call <SID>X("Title", s:comment, "", "")
 	call <SID>X("Identifier", s:red, "", "none")
